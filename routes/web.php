@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('form');
+    return view('home');
+})
+    ->middleware('auth');
+
+Route::get('/register', [SignUpController::class, 'show']);
+Route::post('/register', [SignUpController::class, 'createUser']);
+
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::post('/login', [LoginController::class, 'loginUser']);
+Route::get('/logout', [LoginController::class, 'logoutUser']);
+
+Route::get('/post', function () {
+    return User::find(1)->content;
 });
-
-Route::get('/register',[SignUpController::class,'show']);
-Route::post('/register',[SignUpController::class,'createUser']);
-
-Route::get('/login',[LoginController::class,'show']);
-Route::post('/login',[LoginController::class,'loginUser']);
-Route::get('/logout',[LoginController::class,'logoutUser']);

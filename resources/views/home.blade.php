@@ -16,17 +16,17 @@
         </form>
     @endif --}}
 
-    @auth
-        <h1>hi {{ Auth::user() }}</h1>
-        <form action="/logout" method="get">
-            @csrf
-            <input type="submit" value="Logout">
-        </form>
-    @endauth
+    {{-- @auth --}}
+    <h1>hi {{ Auth::user()->name }}</h1>
+    <form action="/logout" method="get">
+        @csrf
+        <input type="submit" value="Logout">
+    </form>
+    {{-- @endauth
 
     @guest
         <h1>Must log in</h1>
-    @endguest
+    @endguest --}}
 
 </body>
 
