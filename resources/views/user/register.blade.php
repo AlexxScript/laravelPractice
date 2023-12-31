@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('home')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
+@section('content')
     <form action="/register" method="post">
         @csrf
         <input name="name" type="text" placeholder="Set name">
@@ -25,6 +18,5 @@
             </ul>
         </div>
     @endif
-</body>
 
-</html>
+@endsection
