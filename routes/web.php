@@ -33,5 +33,13 @@ Route::get('/logout', [LoginController::class, 'logoutUser']);
 Route::get('/dashboard', function () {
     // $idBlog = Auth::user()->id;
     // return User::find($idBlog)->content;
-    return view('dashboard.main');
+    return view('dashboard.profile');
+})->middleware('auth');
+
+Route::get('/dashboard/create',function () {
+    return view('dashboard.create');
+})->middleware('auth');
+
+Route::get('/dashboard/profile',function () {
+    return view('dashboard.profile');
 })->middleware('auth');

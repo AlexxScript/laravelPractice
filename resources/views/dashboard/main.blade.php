@@ -6,7 +6,7 @@
             options 
         </aside>
         <section>
-            this is the section or route
+            @yield('dashboardMain')
         </section>
     </main>
 @endsection
