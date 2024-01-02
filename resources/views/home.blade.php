@@ -18,10 +18,16 @@
 
     {{-- @auth --}}
     {{-- <h1>hi {{ Auth::user()->name }}</h1> --}}
-    <form action="/logout" method="get">
-        @csrf
-        <input type="submit" value="Logout">
-    </form>
+    @auth
+        <div>
+            <h1>Hello {{ Auth::user()->name }} </h1>
+            <form action="/logout" method="get">
+                @csrf
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+    @endauth
+
     @yield('content')
     {{-- @endauth
 

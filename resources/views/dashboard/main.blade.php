@@ -1,5 +1,12 @@
 @extends('home')
 
 @section('content')
-    <h1>This is the main of the dashboard</h1>
+    <main class="mainDashboard">
+        <aside class="navbarDashboard">
+            options 
+        </aside>
+        <section>
+            this is the section or route
+        </section>
+    </main>
 @endsection
