@@ -43,3 +43,7 @@ Route::get('/dashboard/create',function () {
 Route::get('/dashboard/profile',function () {
     return view('dashboard.profile');
 })->middleware('auth');
+
+Route::post('/dashboard/create',function (Request $request) {
+    return $request->content;
+})->middleware('auth');
