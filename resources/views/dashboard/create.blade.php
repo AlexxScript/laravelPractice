@@ -5,6 +5,7 @@
     <form action="/dashboard/create" id="myForm" method="POST">
         @csrf
         <input type="hidden" name="content">
+        <input type="text" name="title">
         <div id="editor"></div>
         <button class="btnSave" type="submit">Save</button>
     </form>

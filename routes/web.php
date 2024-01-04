@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\UserController;
@@ -44,6 +45,4 @@ Route::get('/dashboard/profile',function () {
     return view('dashboard.profile');
 })->middleware('auth');
 
-Route::post('/dashboard/create',function (Request $request) {
-    return $request->content;
-})->middleware('auth');
+Route::post('/dashboard/create',[ContentController::class,'createContent'])->middleware('auth');
