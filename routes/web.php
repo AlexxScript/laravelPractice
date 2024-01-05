@@ -31,11 +31,13 @@ Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'loginUser']);
 Route::get('/logout', [LoginController::class, 'logoutUser']);
 
-Route::get('/dashboard', function () {
-    // $idBlog = Auth::user()->id;
-    // return User::find($idBlog)->content;
-    return view('dashboard.profile');
-})->middleware('auth');
+// Route::get('/dashboard', function () {
+//     // $idBlog = Auth::user()->id;
+//     // return User::find($idBlog)->content;
+//     return view('dashboard.listContent');
+// })->middleware('auth');
+
+Route::get('/dashboard',[ContentController::class,'showTasks'])->middleware('auth');
 
 Route::get('/dashboard/create',function () {
     return view('dashboard.create');

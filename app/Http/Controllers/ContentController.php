@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class ContentController extends Controller
 {
+
+    public function showTasks () {
+        $content = Content::where('user_id',Auth::id())->get();
+
+        return view('dashboard.listContent',['contents'=>$content]);
+        // return view('dashboard.listContent');
+    }
+
     public function createContent(Request $request)
     {
         $contentJson = $request->input('content');
@@ -23,6 +31,6 @@ class ContentController extends Controller
 
         $content->save();
 
-        return $title;
+        return redirect('/dashboard/create');
     }
 }
