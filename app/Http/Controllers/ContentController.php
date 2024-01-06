@@ -10,10 +10,9 @@ class ContentController extends Controller
 {
 
     public function showTasks () {
-        $content = Content::where('user_id',Auth::id())->get();
+        $contents = Content::where('user_id',Auth::id())->get();
 
-        return view('dashboard.listContent',['contents'=>$content]);
-        // return view('dashboard.listContent');
+        return view('dashboard.listContent',['contents'=>$contents]);
     }
 
     public function createContent(Request $request)
