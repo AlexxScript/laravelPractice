@@ -38,7 +38,7 @@ Route::get('/logout', [LoginController::class, 'logoutUser']);
 // })->middleware('auth');
 
 Route::get('/dashboard',[ContentController::class,'showTasks'])->middleware('auth');
-
+// Route::get('/testapi',[ContentController::class,'controllerApi']);
 Route::get('/dashboard/create',function () {
     return view('dashboard.create');
 })->middleware('auth');

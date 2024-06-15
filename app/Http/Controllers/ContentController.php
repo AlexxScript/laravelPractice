@@ -32,4 +32,11 @@ class ContentController extends Controller
 
         return redirect('/dashboard/create');
     }
+
+    public function controllerApi(Request $request) {
+        return response()->json([
+            'name' => 'UserName22',
+            'country' => 'Spain'
+        ]);
+    }
 }
