@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,18 @@ class ContentController extends Controller
         return response()->json([
             'name' => 'UserName22',
             'country' => 'Spain'
+        ]);
+    }
+
+    public function show(Event $event)
+    {
+        return Inertia::render('Event/Show', [
+            'event' => $event->only(
+                'id',
+                'title',
+                'start_date',
+                'description'
+            ),
         ]);
     }
 }

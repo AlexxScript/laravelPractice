@@ -10,6 +10,7 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
+use App\Http\Middleware\HandleInertiaRequests;
 
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
@@ -40,6 +41,10 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+
+// $middleware->web(append: [
+//     \App\Http\Middleware\HandleInertiaRequests::class,
+// ]);
 
 /*
 |--------------------------------------------------------------------------
