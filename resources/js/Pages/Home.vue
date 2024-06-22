@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <h1>Home</h1>
-    <p>Welcome to your Inertia.js app!</p>
-  </div>
+  <h1>Home</h1>
+  <p>Welcome to your Inertia.js app!</p>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Home',
-});
+<script setup>
+import Layout from '../layouts/Layout.vue'
+
+defineOptions({
+  layout: Layout
+})
+
 </script>
 
 <style scoped>

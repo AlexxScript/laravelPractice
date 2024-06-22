@@ -26,6 +26,7 @@ class SignUpController extends Controller
         $user->name = $request->input("name");
         $user->password = Hash::make($request->input("repeate_password"));
         $user->save();
+        //adjust for vuejs 
         return view('user.login');
     }
 }

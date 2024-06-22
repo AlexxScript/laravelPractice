@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class LoginController extends Controller
 {
-    //
+
     public function show()
     {
-        return view('user.login');
+        return Inertia::render('Home');
     }
 
     public function loginUser(Request $request)
@@ -29,7 +30,8 @@ class LoginController extends Controller
         ])->onlyInput('email');
     }
 
-    public function logoutUser(Request $request) {
+    public function logoutUser(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
