@@ -20,7 +20,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellidoP',
+        'apellidoM',
         'email',
         'password',
     ];
@@ -46,6 +48,6 @@ class User extends Authenticatable
     ];
 
     public function content() {
-        return $this->hasMany(Content::class);
+        // return $this->hasMany(Content::class);
     }
 }
