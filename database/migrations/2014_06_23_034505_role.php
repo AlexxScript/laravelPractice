@@ -12,14 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('usuario_materia', function (Blueprint $table) {
+        Schema::create('role',function(BluePrint $table){
             $table->engine = 'InnoDB';
-            $table->id('id');
-            $table->unsignedBigInteger('usuario_id');    
-            $table->unsignedBigInteger('materia_id');    
-
-            $table->foreign('users_id')->references('id')->on('users');
-            $table->foreign('materia_id')->references('id')->on('materia');
+            $table->id();
+            $table->string('role_name')->unique();
         });
     }
 

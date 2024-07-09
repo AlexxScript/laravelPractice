@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('escuela',function(BluePrint $table){
-            $table->id();
-            $table->string("nombre_escuela");
-            $table->string("nombre_escuela");
+        Schema::create('escuela', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->id(); 
+            $table->string('nombre_escuela');
+            $table->string('password_escuela');
+            $table->timestamps();
         });
     }
 

@@ -12,9 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('role',function(BluePrint $table){
+        Schema::create('horario', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->enum("role_name",["ALUMNO","PROFE","ADMIN"]);
+            $table->string("hora_inicio");
+            $table->string("hora_final");
+            $table->string("dia");
         });
     }
 

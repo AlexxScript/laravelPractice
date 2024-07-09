@@ -13,9 +13,13 @@ return new class extends Migration
     {
         //
         Schema::create("materia",function(BluePrint $table){
+            $table->engine = 'InnoDB';
             $table->id();
+            $table->unsignedBigInteger('horario_id');
             $table->string("nombre_materia");
-            // $table->
+            $table->string("edificio");
+
+            $table->foreign('horario_id')->references('id')->on('horario');
         });
     }
 
