@@ -1,9 +1,7 @@
 <template>
     <main>
         <header>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
+            <Nav/>
         </header>
         <article>
             <slot />
@@ -12,5 +10,13 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import Nav from '../components/Nav.vue';
 </script>
+
+<style scoped>
+article{
+    max-width: 75%;
+    width: 100%;
+    margin: 0 auto;
+}
+</style>
