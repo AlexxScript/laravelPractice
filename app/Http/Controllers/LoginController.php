@@ -11,7 +11,7 @@ class LoginController extends Controller
 
     public function show()
     {
-        return Inertia::render('Home'); 
+        return view('app'); 
     }
 
     public function loginUser(Request $request)
